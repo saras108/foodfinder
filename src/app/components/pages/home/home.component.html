@@ -1,0 +1,39 @@
+<div class="container" style="padding-top: 150;">
+
+    <br>
+    <div class="input-group">
+        <div class="form-outline">
+            <input type="search" id="form1" class="form-control" />
+        </div>
+        <button type="button" class="btn btn-danger">
+            <i class="fa fa-search"></i>
+        </button>
+    </div>
+    <br>
+
+    <div class="row">
+        <div class="col-md-3" style="padding-top: 20px;" *ngFor="let food of foods">
+
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" [src]="food.imgurl" alt="{{food.origins}}">
+                <div class="card-body">
+                    <h5 class="card-title">{{food.name}}</h5>
+                    <p class="card-text">
+
+
+                        <span class="favorite {{food.favorite?'':'not'}}">
+                            <i class="fa fa-heart"></i>
+                            $ {{food.price}}
+                        </span>
+                        <br>
+                        {{food.stars}} quick example text to build on the card title and make up the bulk of the
+                        card's
+                        content.
+                    </p>
+                    <a routerLink="/food/{{food.id}}">{{food.name}}</a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
